@@ -43,7 +43,6 @@
         <li><a href="#awards">awards</a></li>
         <li><a href="#contact" data-translate="nav_contact">contact</a></li>
       </ul>
-      ...
 
       <div
         style="
@@ -354,18 +353,12 @@
               Foundational knowledge in user interface and experience design
               principles.
             </p>
-            <iframe
-              src="DTP intermediate UX_UI certificate.pdf"
-              width="816"
-              height="1056"
-              class="award-iframe"
-              title="UI/UX Beginner Certificate PDF"
-            ></iframe>
+            <img src="DTP intermediate UX_UI certificate.jpg" alt="UI/UX Beginner Certificate" style="width: 100%; border: 1px solid var(--border); margin-bottom: 1rem;">
             <a
               href="DTP intermediate UX_UI certificate.pdf"
               target="_blank"
               class="award-link"
-              >View Full Certificate →</a
+              >View Full Certificate PDF →</a
             >
           </div>
           <div class="card award-card">
@@ -378,18 +371,12 @@
               Advanced practical application of UI/UX design tools and
               methodologies.
             </p>
-            <iframe
-              src="ui-ux-intermediate-certificate.pdf"
-              width="200"
-              height="300"
-              class="award-iframe"
-              title="UI/UX Intermediate Certificate PDF"
-            ></iframe>
+            <img src="certificate (1).jpg" alt="UI/UX Intermediate Certificate" style="width: 100%; border: 1px solid var(--border); margin-bottom: 1rem;">
             <a
               href="ui-ux-intermediate-certificate.pdf"
               target="_blank"
               class="award-link"
-              >View Full Certificate →</a
+              >View Full Certificate PDF →</a
             >
           </div>
         </div>
@@ -441,8 +428,10 @@
           LET'S BUILD TOGETHER.
         </h2>
 
+        <div id="thank-you-msg" style="display: none; background: var(--card-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--accent-yellow); margin-bottom: 2rem; font-weight: 800; color: var(--accent-yellow);"></div>
+
         <div class="contact-box">
-          <form>
+          <form id="contact-form">
             <div>
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" required />
@@ -463,6 +452,18 @@
             <button type="submit">SEND MESSAGE</button>
           </form>
         </div>
+
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const msgDiv = document.getElementById('thank-you-msg');
+                msgDiv.textContent = 'Thank you for the feedback, ' + name + '!';
+                msgDiv.style.display = 'block';
+                this.reset();
+                setTimeout(() => { msgDiv.style.display = 'none'; }, 10000);
+            });
+        </script>
 
         <div class="social-links">
           <a
