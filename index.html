@@ -73,7 +73,7 @@
           </div>
         </div>
         <button id="theme-toggle" class="nav-dropdown-btn">🌙</button>
-        <div class="v-badge"><i class="fa-solid fa-eye" style="margin-right: 6px; color: var(--accent-yellow); font-size: 0.65rem;"></i><span id="v-count">0</span></div>
+        <div class="v-badge"><i class="fa-solid fa-eye" style="margin-right: 6px; color: var(--accent-yellow); font-size: 0.65rem;"></i><span id="v-count">0</span> Visitors</div>
         <a href="#contact-module" class="nav-cta" data-translate="say_hello">Say Hello</a>
       </div>
     </nav>
@@ -532,10 +532,17 @@
 
       async function updateCounter() {
         try {
-          const res = await fetch("https://api.counterapi.dev/v1/david-ntwari-portfolio/visits/increment");
+          const res = await fetch("https://api.counterapi.dev/v1/david-ntwari-v3/visits/increment");
           const data = await res.json();
-          document.getElementById("v-count").textContent = data.count.toLocaleString();
-        } catch (e) {}
+          const countEl = document.getElementById("v-count");
+          if (countEl && data.count) {
+            // Adding an established base number to the real count
+            const totalVisitors = data.count + 4128;
+            countEl.textContent = totalVisitors.toLocaleString();
+          }
+        } catch (e) {
+          console.error("Counter failed:", e);
+        }
       }
       updateCounter();
 
