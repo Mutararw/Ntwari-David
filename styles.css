@@ -838,6 +838,161 @@ form button[type="submit"] {
     margin-bottom: 1.5rem;
 }
 
+/* Certificate Frames */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+}
+
+.cert-frame {
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-frame:hover {
+    transform: translateY(-10px);
+}
+
+.cert-frame-inner {
+    position: relative;
+    padding: 18px;
+    background: linear-gradient(145deg, #f3ecd9, #d8c9a4);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-frame:hover .cert-frame-inner {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+.cert-frame-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+    transition: transform 0.5s ease;
+}
+
+.cert-frame:hover .cert-frame-inner img {
+    transform: scale(1.04);
+}
+
+.cert-frame-inner::after {
+    content: "\f00e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-yellow);
+    color: #050b1a;
+    border-radius: 50%;
+    font-size: 1rem;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cert-frame:hover .cert-frame-inner::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.cert-frame figcaption {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.cert-frame .cert-sub {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 0.3rem;
+}
+
+.cert-pdf-thumb {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #fff;
+    border-radius: 4px;
+    color: #a32638;
+    font-size: 3rem;
+    transition: transform 0.5s ease;
+}
+
+.cert-frame:hover .cert-pdf-thumb {
+    transform: scale(1.04);
+}
+
+.cert-pdf-thumb span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 2px;
+}
+
+/* Certificate Modal Viewer */
+.cert-modal-content {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.cert-viewer-image {
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cert-viewer-pdf {
+    width: 100%;
+    height: 75vh;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cert-viewer-title {
+    margin-top: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+}
+
 /* Modal Styling */
 #projectModal {
     display: none;

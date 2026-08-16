@@ -281,6 +281,43 @@
               </div>
             </div>
           </div>
+
+          <div class="subsection certificates-section" style="margin-top: 5rem;">
+            <h2 data-translate="certs_title" style="font-size: 1rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;">Certificates</h2>
+            <p data-translate="certs_intro" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; max-width: 560px;">Click on any certificate frame to view it in full detail.</p>
+            <div class="certificates-grid">
+              <figure class="cert-frame" onclick="openCert('thegym')">
+                <div class="cert-frame-inner">
+                  <img src="thegym.png" alt="Gym Rwanda Certification" loading="lazy" />
+                </div>
+                <figcaption>
+                  <span data-translate="aw1_title">Gym Rwanda Certification</span>
+                  <span class="cert-sub">The Gym Rwanda</span>
+                </figcaption>
+              </figure>
+              <figure class="cert-frame" onclick="openCert('uxui')">
+                <div class="cert-frame-inner">
+                  <img src="DTP%20intermediate%20UX_UI%20certificate.jpg" alt="UI/UX Intermediate Certificate" loading="lazy" />
+                </div>
+                <figcaption>
+                  <span data-translate="aw3_title">UI/UX Intermediate Certificate</span>
+                  <span class="cert-sub">AUCA</span>
+                </figcaption>
+              </figure>
+              <figure class="cert-frame" onclick="openCert('beginner')">
+                <div class="cert-frame-inner">
+                  <div class="cert-pdf-thumb">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>PDF</span>
+                  </div>
+                </div>
+                <figcaption>
+                  <span data-translate="aw2_title">UI/UX Beginner Certificate</span>
+                  <span class="cert-sub">AUCA</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -350,6 +387,14 @@
       <div class="modal-content">
         <span class="close-modal" onclick="closeProject()">&times;</span>
         <div id="modal-content-area"></div>
+      </div>
+    </div>
+
+    <!-- Certificate Viewer Modal Module -->
+    <div id="certModal" class="modal">
+      <div class="modal-content cert-modal-content">
+        <span class="close-modal" onclick="closeCert()">&times;</span>
+        <div id="cert-viewer"></div>
       </div>
     </div>
 
@@ -424,6 +469,7 @@
           skill_postgres_desc: "Designing relational schemas with complex queries and indexing strategies.",
           leetcode_title: "Competitive Programming Presence", leetcode_desc: "Actively solving complex algorithmic challenges to refine logic and problem-solving speed. Focusing on Data Structures, Dynamic Programming, and Graph Theory.", leetcode_btn: "VIEW LEETCODE PROFILE",
           journey_eyebrow: "professional journey", exp_title: "Experience", awards_title: "Awards & Recognition",
+          certs_title: "Certificates", certs_intro: "Click on any certificate frame to view it in full detail.",
           exp1_role: "Software Engineering Fellow", exp1_desc: "Selected for an elite fellowship focused on mastering advanced Data Structures and Algorithms (DSA) and competitive programming. The program involves intensive technical interview preparation for top Silicon Valley companies and working within an incubator to build high-impact digital products that address critical socio-economic challenges across the African continent.",
           exp2_role: "Software Development Trainee", gym_title: "The Gym Rwanda", exp2_desc: "Participated in an intensive software engineering program bridging the gap between academic coding and international industry standards. Focused on advanced JavaScript (React/Node.js), Test-Driven Development (TDD), and collaborating in globally distributed technical teams.",
           exp3_role: "Enterprise Backend Developer", exp3_desc: "Developing a robust Django 6.0 backend structure, focusing on scalable user management and high-performance API architectures.",
@@ -458,6 +504,7 @@
           skill_postgres_desc: "Gukora schemas z'amakuru zifite queries zigoye.",
           leetcode_title: "Gukemura Ibibazo bya Algorithmic", leetcode_desc: "Gukemura ibibazo bigoye bya algoritimi buri munsi kugira ngo mbe nzi gukemura ibibazo vuba. Nibanda kuri Data Structures na Dynamic Programming.", leetcode_btn: "REBA PROFILI YA LEETCODE",
           journey_eyebrow: "urugendo rwanjye", exp_title: "Uburambe mu Kazi", awards_title: "Ibihembo n'Ishimwe",
+          certs_title: "Ibyemezo", certs_intro: "Kanda kuri frame iyo ari yo yose urebe mu buryo bwuzuye.",
           exp1_role: "Fellow wa Software Engineering", exp1_desc: "Natoranyijwe mu itsinda ry'indashyikirwa ryibanda ku kwiga Data Structures na Algorithms (DSA). Gahunda irimo kwitegura ibizamini by'ibigo bikomeye muri Silicon Valley no kubaka imishinga ikemura ibibazo by'ubukungu muri Afurika.",
           exp2_role: "Uwimenyereza muri Software", gym_title: "The Gym Rwanda", exp2_desc: "Nagize uruhare muri gahunda ikomeye ya software engineering ihuza amashuri n'inganda mpuzamahanga. Nibandaga kuri JavaScript (React/Node.js) n'uburyo bwo gukora code mu itsinda.",
           exp3_role: "Enterprise Backend Developer", exp3_desc: "Kubaka imiterere ya backend muri Django 6.0, hibandwa ku micungire y'abakoresha n'uburyo bwa API bwihuta.",
@@ -492,6 +539,7 @@
           skill_postgres_desc: "Conception de schémas relationnels avec des requêtes complexes.",
           leetcode_title: "Présence en Programmation Compétitive", leetcode_desc: "Résolution active de défis algorithmiques complexes pour affiner la logique et la rapidité. Focus sur les structures de données.", leetcode_btn: "VOIR LE PROFIL LEETCODE",
           journey_eyebrow: "parcours professionnel", exp_title: "Expérience", awards_title: "Prix & Reconnaissance",
+          certs_title: "Certificats", certs_intro: "Cliquez sur un cadre pour voir le certificat en détail.",
           exp1_role: "Fellow en Génie Logiciel", exp1_desc: "Sélectionné pour une bourse d'élite axée sur la maîtrise des structures de données et algorithmes (DSA). Le programme comprend une préparation intensive aux entretiens techniques pour les grandes entreprises de la Silicon Valley.",
           exp2_role: "Stagiaire en Développement", gym_title: "The Gym Rwanda", exp2_desc: "Participation à un programme intensif de génie logiciel comblant le fossé entre le codage académique et les normes industrielles internationales.",
           exp3_role: "Développeur Backend", exp3_desc: "Développement d'une structure backend Django 6.0 robuste, axée sur la gestion des utilisateurs et les APIs performantes.",
@@ -585,7 +633,34 @@
       }
 
       function closeProject() { document.getElementById('projectModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-      window.onclick = (e) => { if (e.target == document.getElementById('projectModal')) closeProject(); }
+
+      // Certificate Viewer Logic
+      const certs = {
+        thegym: { title: "Gym Rwanda Certification", src: "thegym.png", type: "image" },
+        uxui: { title: "UI/UX Intermediate Certificate", src: "DTP%20intermediate%20UX_UI%20certificate.jpg", type: "image" },
+        beginner: { title: "UI/UX Beginner Certificate", src: "uibeginner.pdf", type: "pdf" }
+      };
+
+      function openCert(id) {
+        const cert = certs[id];
+        if (!cert) return;
+        const viewer = document.getElementById('cert-viewer');
+        const body = cert.type === 'pdf'
+          ? `<iframe class="cert-viewer-pdf" src="${cert.src}#toolbar=1&view=FitH" loading="lazy"></iframe>`
+          : `<img class="cert-viewer-image" src="${cert.src}" alt="${cert.title}" />`;
+        viewer.innerHTML = body + `<div class="cert-viewer-title">${cert.title}</div>`;
+        document.getElementById('certModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCert() { document.getElementById('certModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+      window.onclick = (e) => {
+        if (e.target == document.getElementById('projectModal')) closeProject();
+        if (e.target == document.getElementById('certModal')) closeCert();
+      };
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { closeProject(); closeCert(); }
+      });
 
       const contactForm = document.getElementById('contact-form');
       contactForm.addEventListener('submit', async function(e) {
